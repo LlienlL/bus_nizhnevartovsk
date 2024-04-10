@@ -1,0 +1,55 @@
+@import url("~leaflet/dist/leaflet.css");
+
+body,
+#root,
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.map-container {
+  position: relative;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px; /* Ширина боковой панели */
+  height: 100%; /* Высота боковой панели */
+  background-color: #FFFFFF; /* Цвет фона боковой панели */
+  z-index: 1000; /* Высокий z-index для боковой панели */
+  transition: transform 0.3s ease; /* Анимация для плавного открытия/закрытия */
+  transform: translateX(-100%); /* Скрываем боковую панель за левый край экрана */
+}
+
+.sidebar.visible {
+  transform: translateX(0); /* Показываем боковую панель */
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: left 0.3s ease; /* Анимация для плавного движения */
+  z-index: 1001;
+  width: 40px; /* Устанавливаем ширину кнопки */
+  height: 40px; /* Устанавливаем высоту кнопки */
+  line-height: 35px; /* Устанавливаем линейную высоту для выравнивания текста по центру */
+  text-align: center; /* Выравниваем текст по центру */
+}
+
+.sidebar-toggle-btn::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-toggle-btn::before {
+  content: attr(data-icon);
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+}

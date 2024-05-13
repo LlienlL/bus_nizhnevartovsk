@@ -18,10 +18,10 @@ class MapComponent extends React.Component {
       filteredData: [],
       busStopData: [],
       routeTripsData: [],
-      routeCoordinates: {}, // Добавляем состояние для хранения координат маршрутов
-      selectedVector: null, // Добавляем состояние для хранения выбранного вектора
+      routeCoordinates: {}, //  хранения координат маршрутов
+      selectedVector: null, //  хранения выбранного вектора
       firstCheckboxChecked: true, // Инициализируем первый чекбокс как выбранный
-      nextBusStopTime: {}, // Добавляем объект для хранения времени следующего автобуса для каждой остановки
+      nextBusStopTime: {}, //  хранения времени следующего автобуса для каждой остановки
     };
   }
 
@@ -147,7 +147,7 @@ class MapComponent extends React.Component {
       className: 'bus-stop-icon' // Добавляем класс иконке остановки
     });
 
-    // Создаем и инициализируем customIcon
+    // Создаем и инициализируем transportbus
     this.customIcon = new L.Icon({
       iconUrl: customMarkerIcon,
       iconSize: [32, 32],
@@ -282,6 +282,9 @@ class MapComponent extends React.Component {
                   <p>Долгота: {item.LONGITUDE}</p> */}
                   <p>Номер автобуса: {item.ROUTE_ID}</p>
                   <p>Скорость: {item.SPEED}</p>
+                  {/* <p>Следующая остановка: {item.NEXT_BUSSTOP_NAME}</p>
+                  <p>Время до прибытия: {item.NEXT_BUSSTOP_TIME}</p> */}
+                  {/* забыл передать */}
 
                 </div>
               </Popup>
